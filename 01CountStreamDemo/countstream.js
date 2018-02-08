@@ -13,6 +13,8 @@ function CountStream(matchText,options) {
 util.inherits(CountStream,Writable);
 
 CountStream.prototype._write = function (chunk,encoding,cb) {
+    /*this.count += chunk.length;
+    console.log(chunk);*/
     var matches = chunk.toString().match(this.matcher);
     if(matches){
         this.count += matches.length;
